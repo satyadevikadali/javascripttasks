@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let string = "malayalam";
+        function isPalindrome(str){
+            let i=0;
+            let j=str.length-1;
+            while(i < j){
+                if(str[i] !== str[j]){
+                    return false;
+                }else{
+                    i++;
+                    j--;
+                }
+
+                
+            }
+return true
+        }
+        console.log(isPalindrome(string))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
