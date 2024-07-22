@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const items = [
+            { name: 'Apple', price: 1 },
+            { name: 'Orange', price: 2 },
+            { name: 'Mango', price: 3 },
+        ];
+        //for single value
+        let res = items.reduce((acc,ele)=>{
+acc += ele.price
+return acc
+        },0)
+        console.log(res);
+
+        const items1 = [
+  { name: 'Apple', category: 'Fruit' },
+  { name: 'Onion', category: 'Vegetable' },
+  { name: 'Orange', category: 'Fruit' },
+  { name: 'Lettuce', category: 'Vegetable' },
+];
+//for grouping value
+let res1 = items1.reduce((acc,ele)=>{
+    cat = ele.category;
+    if(!acc[cat]){
+        acc[cat]=[]
+
+    }
+    acc[cat].push(ele.name)
+    return acc
+},{})
+console.log(res1);
+const items2 = [1, 2, 3, 1, 2, 3, 7, 8, 7];
+
+const noDuplicateItems = items2.reduce((accumulator, item) => {
+  if (!accumulator.includes(item)) {
+    accumulator.push(item);
+  }
+  return accumulator;
+}, []);
+
+console.log(noDuplicateItems); 
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
