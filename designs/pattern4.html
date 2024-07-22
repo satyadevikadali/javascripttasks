@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //54321
+        // 4321
+        //  321
+        //   21
+        //    1
+
+        let arr = [1,2,3,4,5];
+        for(let i=1;i<=arr.length;i++){
+            let item = '';
+            for(let k=1;k<i;k++){
+                item +='  '  //if we remove space then pyramid
+             }
+            for(let j=arr.length-i;j>=0;j--){
+                item += arr[j] +' '
+
+            }
+          
+            console.log(item)
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
