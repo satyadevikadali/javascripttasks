@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function promise1(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve('promise1 resolved')
+                },1000)
+            })
+        }
+        function promise2(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve('promise2 resolved')
+                },1000)
+            })
+        }
+        function promise3(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    reject('promise3 reject')
+                },1000)
+            })
+        }
+
+        // Promise.all([promise1(),promise2(),promise3()]).then((res)=>{
+        //     console.log(res)
+        // }).catch((e)=>{
+        //     console.log(e)
+        // })
+        Promise.myAll = (arrayOfPromises)=>{
+            return new Promise((resolve,reject)=>{
+            let result = [];
+            let completed = 0;
+                arrayOfPromises.forEach((promise,i)=>{
+                        Promise.resolve(promise).then((data)=>{
+                                result[i] = data;
+                       completed++;
+                        if(completed === arrayOfPromises.length){
+                            resolve(result)
+                        }
+                    }).catch((e)=>{
+                        console.log(e)
+                    })
+                })
+            })
+
+        }
+arrayOfPromises = [promise1(),promise2(),promise3()]
+        Promise.myAll(arrayOfPromises).then((res)=>{
+            console.log(res)
+        }).catch((e)=>{
+            console.log(e)
+        })
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //       1
+        //      21
+        //     321
+        //    4321
+        //   54321 
+         let arr = [1,2,3,4,5];
+        for(let i=0;i<arr.length;i++){
+            let item ='';
+             for(let j=0;j<arr.length-i;j++){
+               item +='  ';               
+            }
+            for(let k=i;k>=0;k--){
+                item += arr[k]+' ';
+                
+            }
+
+            console.log(item)
+            
+
+        }
+
+
+      
+
+       
+            
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
